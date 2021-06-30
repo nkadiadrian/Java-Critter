@@ -1,10 +1,12 @@
 public class Critter {
+    protected int TIRED_THRESHOLD = 5;
+
     private boolean isAlive;
     private boolean isVictorious;
-    private int foodLevel;
-    private int tiredness;
-    private int breadStock;
-    private String name;
+    protected int foodLevel;
+    protected int tiredness;
+    protected int breadStock;
+    protected String name;
 
     public Critter() {
         isAlive = true;
@@ -15,12 +17,10 @@ public class Critter {
         this.name = "Critter";
     }
     public Critter(String name) {
-        isAlive = true;
-        isVictorious = false;
-        foodLevel = 5;
-        tiredness = 0;
-        breadStock = 0;
-        this.name = name;
+        this();
+        if (!name.isBlank()) {
+            this.name = name;
+        }
     }
 
     public boolean isAlive() {
@@ -69,7 +69,7 @@ public class Critter {
                 System.out.println(name + " over ate.");
                 die();
             }
-            else if (tiredness > 5) {
+            else if (tiredness > TIRED_THRESHOLD) {
                 System.out.println(name + " is sleepy from so much food.");
                 sleep();
             }
@@ -86,7 +86,7 @@ public class Critter {
                 System.out.println(name + " has got all the bread there is!");
                 isVictorious = true;
             }
-            else if (tiredness > 5) {
+            else if (tiredness > TIRED_THRESHOLD) {
                 System.out.println(name + " is sleepy from getting so much bread");
                 sleep();
             }
