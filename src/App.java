@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ServiceLoader;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -13,7 +14,9 @@ public class App {
             System.out.println("What would you like " + bob.getName() + " to do?");
             String lineRead = scanner.nextLine();
             if (lineRead.equalsIgnoreCase("eat")) {
-                bob.feed();
+                System.out.println("What would you like " + bob.getName() + " to eat?");
+                lineRead = scanner.nextLine();
+                bob.feed(CritterFactory.selectFood(lineRead));
             } else if (lineRead.equalsIgnoreCase("sleep")) {
                 bob.sleep();
             } else if (lineRead.equalsIgnoreCase("get bread")) {

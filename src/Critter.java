@@ -58,13 +58,10 @@ public class Critter {
         }
     }
 
-    public void feed() {
+    public void feed(Food food) {
         if (isAlive) {
             System.out.println(name + " eats.");
-            foodLevel++;
-            tiredness++;
-            System.out.println(foodLevel + " " + tiredness);
-
+            food.applyFood(this);
             if (foodLevel > 10) {
                 System.out.println(name + " over ate.");
                 die();

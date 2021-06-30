@@ -11,8 +11,8 @@ public class Glutton extends Critter {
     }
 
     @Override
-    public void feed() {
+    public void feed(Food food) {
         foodLevel += 2;
-        super.feed();
+        super.feed(food);
     }
 }
