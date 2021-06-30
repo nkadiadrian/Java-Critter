@@ -31,6 +31,10 @@ public class Critter {
         return isVictorious;
     }
 
+    public String getName() {
+        return name;
+    }
+
     private void die() {
         isAlive = false;
     }
@@ -39,6 +43,15 @@ public class Critter {
         System.out.println(name + " sleeps.");
         tiredness = 0;
         foodLevel -= 3;
+        for (int i = 0; i < 5; i++) {
+            try {
+                Thread.sleep(1000);
+                System.out.println("Zzz...");
+            } catch (InterruptedException e) {
+                System.out.println("Could not snore due to interruption\n" + e.getMessage());
+            }
+        }
+
         if (foodLevel <= 0) {
             System.out.println(name + " starves to death.");
             die();
@@ -50,6 +63,8 @@ public class Critter {
             System.out.println(name + " eats.");
             foodLevel++;
             tiredness++;
+            System.out.println(foodLevel + " " + tiredness);
+
             if (foodLevel > 10) {
                 System.out.println(name + " over ate.");
                 die();
@@ -66,10 +81,14 @@ public class Critter {
             System.out.println(name + " is getting that bread!");
             foodLevel -= 2;
             tiredness += 4;
-            breadStock += 2;
+            breadStock += 4;
             if (breadStock >= 10) {
-                System.out.println(name + " is victorious, they've got all the bread there is!");
+                System.out.println(name + " has got all the bread there is!");
                 isVictorious = true;
+            }
+            else if (tiredness > 5) {
+                System.out.println(name + " is sleepy from getting so much bread");
+                sleep();
             }
         }
     }

@@ -3,10 +3,12 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
-        Critter bob = new Critter();
+        System.out.println("What would you like your critter to be called?");
+        String lineRead = scanner.nextLine();
+        Critter bob = lineRead.isBlank() ? new Critter() : new Critter(lineRead);
         while (bob.isAlive() && !bob.isVictorious()) {
-            System.out.println("What would you like Critter to do?");
-            String lineRead = scanner.nextLine();
+            System.out.println("What would you like " + bob.getName() + " to do?");
+            lineRead = scanner.nextLine();
             if (lineRead.equalsIgnoreCase("eat")) {
                 bob.feed();
             } else if (lineRead.equalsIgnoreCase("sleep")) {
@@ -15,7 +17,12 @@ public class App {
                 bob.hustle();
             }
         }
-        System.out.println("Critter has died.");
+
+        if (bob.isVictorious()) {
+            System.out.println(bob.getName() + " is victorious");
+        } else if (!bob.isAlive()) {
+            System.out.println(bob.getName() + " has died.");
+        }
         scanner.close();
     }
 }
