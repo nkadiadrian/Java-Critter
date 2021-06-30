@@ -36,11 +36,11 @@ public class Critter {
     }
     
     public void sleep() {
-        System.out.println("Critter sleeps.");
+        System.out.println(name + " sleeps.");
         tiredness = 0;
         foodLevel -= 3;
         if (foodLevel <= 0) {
-            System.out.println("Critter starves to death.");
+            System.out.println(name + " starves to death.");
             die();
         }
     }
