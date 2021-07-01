@@ -1,3 +1,5 @@
+package critter;
+
 public class CritterFactory {
     public static Critter createCritter(String critterType, String name) {
         Critter critter;
@@ -17,20 +19,5 @@ public class CritterFactory {
        }
 
        return critter;
-    }
-
-    public static Food selectFood(String food) {
-        food = food.toLowerCase();
-
-        switch (food) {
-            case "banana":
-                return new Banana();
-            case "bread":
-                return new Bread();
-            case "full english":
-                return new FullEnglish();
-            default:
-                return new Apple();
-        }
     }
 }

@@ -1,3 +1,7 @@
+package critter;
+
+import food.Food;
+
 public class Critter {
     protected int TIRED_THRESHOLD = 5;
 
@@ -5,24 +9,25 @@ public class Critter {
     private boolean isVictorious;
     protected int foodLevel;
     protected int tiredness;
-    protected int breadStock;
-    protected String name;
 
+    protected int breadStock;
+
+    protected String name;
     public Critter() {
         isAlive = true;
         isVictorious = false;
         foodLevel = 5;
         tiredness = 0;
         breadStock = 0;
-        this.name = "Critter";
+        this.name = "critter.Critter";
     }
+
     public Critter(String name) {
         this();
         if (!name.isBlank()) {
             this.name = name;
         }
     }
-
     public boolean isAlive() {
         return isAlive;
     }
@@ -38,7 +43,7 @@ public class Critter {
     private void die() {
         isAlive = false;
     }
-    
+
     public void sleep() {
         System.out.println(name + " sleeps.");
         tiredness = 0;
@@ -88,5 +93,45 @@ public class Critter {
                 sleep();
             }
         }
+    }
+
+    public int getFoodLevel() {
+        return foodLevel;
+    }
+
+    public void setFoodLevel(int foodLevel) {
+        this.foodLevel = foodLevel;
+    }
+
+    public void incrementFoodLevel(int increment) {
+        this.setFoodLevel(this.getFoodLevel() + increment);
+    }
+
+    public int getTiredness() {
+        return tiredness;
+    }
+
+    public void setTiredness(int tiredness) {
+        this.tiredness = tiredness;
+    }
+
+    public void incrementTiredness(int increment) {
+        this.setTiredness(this.getTiredness() + increment);
+    }
+
+    public int getBreadStock() {
+        return breadStock;
+    }
+
+    public void setBreadStock(int breadStock) {
+        this.breadStock = breadStock;
+    }
+
+    public void incrementBreadStock(int increment) {
+        this.setBreadStock(this.getBreadStock() + increment);
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

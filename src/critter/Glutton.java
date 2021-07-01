@@ -1,12 +1,16 @@
+package critter;
+
+import food.Food;
+
 public class Glutton extends Critter {
     public Glutton() {
-        super("Glutton");
+        super("critter.Glutton");
     }
 
     public Glutton(String name) {
         this();
         if (!name.isBlank()) {
-            this.name = "Glutton " + name;
+            this.name = "critter.Glutton " + name;
         }
     }
 

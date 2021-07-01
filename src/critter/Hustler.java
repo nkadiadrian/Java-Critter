@@ -1,12 +1,14 @@
+package critter;
+
 public class Hustler extends Critter {
     public Hustler() {
-        super("Hustler");
+        super("critter.Hustler");
     }
 
     public Hustler(String name) {
         this();
         if (!name.isBlank()) {
-            this.name = "Hustler " + name;
+            this.name = "critter.Hustler " + name;
         }
     }
 

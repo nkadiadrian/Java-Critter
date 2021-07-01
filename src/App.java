@@ -1,5 +1,8 @@
+import critter.Critter;
+import critter.CritterFactory;
+import food.FoodFactory;
+
 import java.util.Scanner;
-import java.util.ServiceLoader;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -16,7 +19,7 @@ public class App {
             if (lineRead.equalsIgnoreCase("eat")) {
                 System.out.println("What would you like " + bob.getName() + " to eat?");
                 lineRead = scanner.nextLine();
-                bob.feed(CritterFactory.selectFood(lineRead));
+                bob.feed(FoodFactory.selectFood(lineRead));
             } else if (lineRead.equalsIgnoreCase("sleep")) {
                 bob.sleep();
             } else if (lineRead.equalsIgnoreCase("get bread")) {
