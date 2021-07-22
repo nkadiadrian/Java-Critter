@@ -1,4 +1,4 @@
-package critter;
+package CritterTypes;
 
 public class Sleeper extends Critter {
     public Sleeper() {

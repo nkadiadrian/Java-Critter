@@ -1,4 +1,4 @@
-package critter;
+package CritterTypes;
 
 import food.Food;
 

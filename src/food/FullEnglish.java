@@ -1,6 +1,6 @@
 package food;
 
-import critter.Critter;
+import CritterTypes.Critter;
 
 public class FullEnglish implements Food {
     @Override

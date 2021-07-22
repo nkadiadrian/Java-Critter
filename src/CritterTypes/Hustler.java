@@ -1,4 +1,4 @@
-package critter;
+package CritterTypes;
 
 public class Hustler extends Critter {
     public Hustler() {

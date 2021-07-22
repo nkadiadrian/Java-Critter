@@ -1,4 +1,4 @@
-package critter;
+package CritterTypes;
 
 public class CritterFactory {
     public static Critter createCritter(String critterType, String name) {
@@ -13,7 +13,7 @@ public class CritterFactory {
                critter = new Sleeper(name);
                break;
            case "glutton":
-               critter = new Glutton(name);
+               //critter = new Glutton(name);
            default:
                critter = new Critter(name);
        }

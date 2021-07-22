@@ -1,6 +1,6 @@
 package food;
 
-import critter.Critter;
+import CritterTypes.Critter;
 
 public class Bread implements Food {
     @Override

@@ -1,5 +1,5 @@
-import critter.Critter;
-import critter.CritterFactory;
+import CritterTypes.Critter;
+import CritterTypes.CritterFactory;
 import food.FoodFactory;
 
 import java.util.Scanner;
